@@ -48,7 +48,10 @@ namespace TelegramFontPatcher
                     "DAOpenSansBold",
                     "DAOpenSansBoldItalic",
                     "DAOpenSansSemibold",
-                    "DAOpenSansSemiboldItalic"
+                    "DAOpenSansSemiboldItalic",
+                    "Microsoft YaHei",
+                    "Microsoft JhengHei UI",
+                    "Yu Gothic UI"                    
                 });
 
                 string patchedName = path + ".patched";
