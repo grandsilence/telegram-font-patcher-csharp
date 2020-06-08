@@ -30,7 +30,7 @@ namespace TelegramFontPatcher
             try
             {
                 var proc = processes[0];
-                var path = proc.MainModule.FileName;
+                string path = proc.MainModule.FileName;
 
                 proc.Kill();
                 proc.WaitForExit();
@@ -41,14 +41,22 @@ namespace TelegramFontPatcher
                 Console.WriteLine($"NOTICE: Trying to patch {ExeName}...");
                 
                 var patternsRegular = new PatternList("Arial", new[] {
-                    "Segoe UI", "Segoe UI Semibold",
-                    "Open Sans", "Open Sans Semibold",
+                    "Segoe UI",
+                    "Segoe UI Semibold",
+                    "Open Sans",
+                    "Open Sans Semibold",
+                    
                     "DAOpenSansRegular",
                     "DAOpenSansRegularItalic",
-                    "DAOpenSansBold",
-                    "DAOpenSansBoldItalic",
+                    "DAOpenSansSemiboldAsBold",
+                    "DAOpenSansSemiboldItalicAsBold",
                     "DAOpenSansSemibold",
                     "DAOpenSansSemiboldItalic",
+                    
+                    "DAVazirRegular",
+                    "DAVazirMediumAsBold",
+                    "DAVazirMedium",
+                    
                     "Microsoft YaHei",
                     "Microsoft JhengHei UI",
                     "Yu Gothic UI"                    
@@ -60,7 +68,7 @@ namespace TelegramFontPatcher
 
                 Console.WriteLine("Patching...");
                 
-                using (var reader = new BinaryReader(new FileStream(ExeName, FileMode.Open)))
+                using (var reader = new BinaryReader(new FileStream(path, FileMode.Open)))
                 using (var writer = new BinaryWriter(new FileStream(patchedName, FileMode.Create)))
                 {
                     BinaryUtility.Replace(reader, writer, patternsRegular);
