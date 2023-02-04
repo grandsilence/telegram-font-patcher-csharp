@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
+"DAOpenSans"="Tahoma"
+"DAOpenSansBold"="Tahoma"
+"DAOpenSansBoldItalic"="Tahoma"
+"DAOpenSansRegular"="Tahoma"
+"DAOpenSansRegularItalic"="Tahoma"
+"DAOpenSansSemibold"="Tahoma"
+"DAOpenSansSemiboldItalic"="Tahoma"
+"DAVazir"="Tahoma"
+"DAVazirBold"="Tahoma"
+"DAVazirMedium"="Tahoma"
+"DAVazirRegular"="Tahoma"
+;; Priority font resolving: "Cascadia Mono", "Consolas", "Liberation Mono", "Menlo", "Courier"
+;; Override monospace font:
+"Cascadia Mono"="Fixedsys"
